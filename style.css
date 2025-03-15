@@ -1,0 +1,389 @@
+/* ============================ */
+/* General Styles             */
+/* ============================ */
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.7;
+    color: #333;
+    background-color: #f9f9f9;
+    scroll-behavior: smooth;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ============================ */
+/* Header & Navigation          */
+/* ============================ */
+
+header {
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    padding: 10px 0;
+}
+
+.nav-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 10px 20px;
+}
+
+.back-btn {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.nav-content h1 {
+    font-size: 24px;
+    font-weight: 600;
+    margin: 0;
+}
+
+.logo img {
+    height: 70px;
+    width: auto;
+    object-fit: contain;
+}
+
+.nav-links {
+    display: flex;
+    gap: 120px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: #34495e;
+    font-weight: 500;
+    font-size: 22px;
+    transition: all 0.3s ease;
+}
+
+.nav-links li a:hover {
+    color: #3498db;
+    transform: scale(1.08);
+}
+
+.cta {
+    background-color: #3498db;
+    color: #fff;
+    padding: 12px 25px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.3s;
+}
+
+.cta:hover {
+    background-color: #2980b9;
+}
+
+/* ============================ */
+/* Hero Section                 */
+/* ============================ */
+
+.hero {
+    background: linear-gradient(135deg, #e0f2fe, #f0f8ff);
+    padding: 470px 0 80px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 10;
+}
+
+.hero h1 {
+    font-size: 3.5em;
+    margin-bottom: 25px;
+    color: #2c3e50;
+    font-weight: 700;
+}
+
+.hero p {
+    font-size: 1.3em;
+    margin-bottom: 40px;
+    color: #555;
+}
+
+/* Floating Background Images */
+
+.background-images-wrapper {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.moving-image {
+    position: absolute;
+    opacity: 0.12;
+    filter: blur(8px);
+    min-width: 600px;
+    min-height: 400px;
+    object-fit: cover;
+    animation: float 30s infinite alternate ease-in-out;
+}
+
+.image-1 { top: 10%; left: -20%; animation-duration: 25s; }
+.image-2 { bottom: 5%; right: -15%; animation-duration: 35s; }
+.image-3 { top: 50%; left: 50%; transform: translate(-50%, -50%); animation-duration: 40s; }
+
+@keyframes float {
+    0% { transform: translate(0, 0) scale(1); }
+    50% { transform: translate(-30px, 30px) scale(1.05); }
+    100% { transform: translate(30px, -30px) scale(1); }
+}
+
+/* ============================ */
+/* Services Section             */
+/* ============================ */
+
+.services, .portfolio, .contact {
+    padding: 100px 0;
+    text-align: center;
+}
+
+.services h2, .portfolio h2, .contact h2 {
+    font-size: 2.8em;
+    margin-bottom: 50px;
+    color: #2c3e50;
+    font-weight: 600;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
+    padding: 0 20px;
+    justify-items: center;
+}
+
+.service {
+    background: white;
+    border-radius: 18px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    padding: 30px;
+    max-width: 220px;
+    min-height: 180px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.service i {
+    font-size: 40px;
+    color: #007bff;
+    margin-bottom: 12px;
+}
+
+.service h3 {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.service p {
+    font-size: 14px;
+    color: #555;
+    line-height: 1.4;
+}
+
+/* ============================ */
+/* Portfolio Section            */
+/* ============================ */
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin-top: 40px;
+}
+
+.portfolio-item img {
+    width: 100%;
+    object-fit: contain;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.portfolio-item img:hover {
+    transform: scale(1.05);
+}
+
+/* ============================ */
+/* Gallery Page Styles          */
+/* ============================ */
+
+.gallery-section {
+    padding: 20px;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 19px;
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover {
+    transform: scale(1.05);
+}
+
+.gallery-item img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.gallery-item {
+    padding-bottom: 100%;
+}
+
+.gallery-page header {
+    text-align: center;
+    padding-top: 20px;
+}
+
+.gallery-page .nav-content {
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+    margin-left: 0%; /* Adjust this percentage as needed */
+}
+
+.gallery-page .back-btn {
+    display: block;
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    font-size: 16px;
+    margin-bottom: 5px;
+    transition: color 0.3s ease;
+    text-align: center;
+}
+
+.gallery-page .back-btn:hover {
+    color: #007bff;
+    text-decoration: none;
+    text-transition: transform 0.3s ease;
+}
+
+.gallery-page .nav-content h1 {
+    font-size: 30px;
+    font-weight: 600;
+    margin: 0;
+}
+
+.lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.lightbox-img {
+    max-width: 95%;
+    max-height: 95%;
+    object-fit: contain;
+    transition: transform 0.3s ease-in-out;
+}
+
+.lightbox-img.zoom-out {
+    transform: scale(1.05);
+}
+
+.lightbox-img.close-effect {
+    transform: scale(0);
+    opacity: 0;
+}
+
+.close-lightbox, .prev-lightbox, .next-lightbox {
+    position: absolute;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 4em;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out; /* Add transition for smooth animation */
+
+}
+
+.close-lightbox {
+    top: 20px;
+    right: 20px;
+    color: red;
+    
+}
+
+.prev-lightbox {
+    left: 200px;
+}
+
+.next-lightbox {
+    right: 200px;
+}
+
+.close-lightbox:hover, .prev-lightbox:hover, .next-lightbox:hover {
+    transform: scale(1.1); /* Scale up slightly on hover */
+    /* You can also add other hover effects here, like background color or color changes */
+}
+
+.coming-soon p {
+    background: linear-gradient(90deg, #f06, #f80, #ff0, #0f0, #0ff, #00f, #f0f, #f06); /* Added repeating color */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientScroll 15s linear infinite; /* Increased duration */
+    font-size: 5.5em;
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    background-size: 800% auto; /* Significantly increased background-size */
+}
+
+@keyframes gradientScroll {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 400% 50%; /* Adjusted for seamless loop */
+    }
+}
